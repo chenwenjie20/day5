@@ -1,0 +1,44 @@
+package com.chenwenjie.util;
+
+import static org.junit.Assert.*;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.junit.Test;
+
+public class DateUtilTest {
+
+	@Test
+	public void testRandomDate() {
+		
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		
+		for (int i = 0; i < 100; i++) {
+			Date date = DateUtil.randomDate(new Date(0),new Date());
+			System.out.println(df.format(date));
+		}
+		
+	}
+	
+	@Test
+	public void testEndMonth() {
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		
+		Date date = DateUtil.initMonth(new Date());
+		System.out.println(df.format(date));
+		
+	}
+
+	
+	@Test
+	public void testlnitMonth() {
+		
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		
+		Date date = DateUtil.initMonth(new Date());
+		
+		System.out.println(df.format(date));
+	}
+	
+}
